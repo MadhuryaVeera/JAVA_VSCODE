@@ -1,0 +1,44 @@
+mport java.awt.Color;
+import java.awt.event.MouseListener; // Interface
+import java.awt.event.MouseEvent;
+import javax.swing.*;
+class ML1 implements MouseListener {
+	JLabel label;
+	public ML1() {
+		JFrame frame = new JFrame("Hello");
+		frame.setSize(500, 500);
+		label = new JLabel();
+		label.setBounds(100, 100, 250, 250);
+		label.setBackground(Color.black);
+		label.setOpaque(true);
+		label.addMouseListener(this);
+ 
+		frame.add(label);
+		frame.setLayout(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
+		frame.setVisible(true);
+	}
+	public void mouseEntered(MouseEvent e) {
+		label.setBackground(Color.blue);
+    }
+    public void mouseExited(MouseEvent e) {
+    	label.setBackground(Color.black);
+    }
+    public void mousePressed(MouseEvent e) {
+    	label.setBackground(Color.green);
+    }
+    public void mouseReleased(MouseEvent e) {
+    	label.setBackground(Color.red);
+    }
+    public void mouseClicked(MouseEvent e) {
+    	label.setBackground(Color.yellow);
+    }
+}
+public class Mouseevents {
+	public static void main(String[] args) {
+		new ML1();
+	}
+}
+ 
+has context menu
