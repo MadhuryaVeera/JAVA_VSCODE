@@ -1,0 +1,64 @@
+////// Madhu_code for the project//////
+import javax.swing.JFrame;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;//interface
+import java.awt.event.ActionEvent;//class
+import javax.swing.JTextField;
+// class DoSomething implements ActionListener{
+//        public void actionPerformed(ActionEvent e)
+//        {
+//            System.out.println("You Clicked choose button");
+//        } 
+// }
+public class GUIFundamentals {
+    public static void main(String[] args) {
+        // an object of JFrame class
+      // JFrame window=new JFrame("Our Frame");// one way to set the title to the window directly while creating object
+       //the other way to set title is is
+       JFrame window=new JFrame(); 
+       window.setTitle("OurFrame");
+       //An object of JLabel class in swing package
+       //creating a label;
+       JLabel JL1=new JLabel();
+       JL1.setText("This is my first usage of GUI");// writing a text in the label
+       JL1.setBounds(0,300,450,30);//x-axis 0 means starting in the corner and y-axis 300 means giving the text down from the top we can change x,y axis
+       JL1.setForeground(Color.MAGENTA);// this will give the coloe to the text
+       //object for Font
+       Font F1=new Font("MV Boli",Font.BOLD,25);// this will change the style of the text
+       JL1.setFont(F1);// making connection to label and font
+       // ending of creating label next make connection of label to window
+       //making the connnection should be done because the font styling should be done to label and the label should be visible on window
+       JTextField JT1=new JTextField();
+       JT1.setFont(F1);
+       JT1.setBounds(110,150,150,50);
+       //object for button
+       JButton JB1=new JButton();
+       JB1.setText("Choose");
+       JB1.setBounds(10,150,90,50); //setBounds is required because we set layout to null the layout should be set to null because to display more than one label or button
+    //    JB1.addActionListener(new DoSomething());//instead of creating class and calling here like this directly we can write as beblow without writiong a class
+       JB1.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e)
+         {
+            String sh=JT1.getText();//this is used to get the tect written in the textfeild 
+            System.out.println("Hello "+sh);
+            JT1.setText("");//to empty the textfeild after clicking the button
+         }
+       });
+       //textfields are used to take text from user
+      
+       window.add(JL1);//this will add the text written in label to the window (or) this will make the connection between window and label;
+       window.add(JB1);//connection b/w button and window
+       window.add(JT1);//adding text fies to window and bounds should be set for compulsary because of null layouts
+       window.getContentPane().setBackground(Color.GREEN);//to set the background color in awt package
+       window.setResizable(false);//by default resize option will be true so by mentioning false
+       // this will restrict the option to resize the window by using cursor and the maximize button will also be disappeared
+       window.setSize(500,500);// to set the size of the window becoz by default it is small in size
+       window.setLayout(null);//making use of no layouts this will make the labels not visible on window to make visible we use bounds in labels
+       window.setVisible(true);// to see the window on the screen 
+       window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// this will terminate the program on closing the window 
+      //creating two labels in same window will result in making visible of only onelabel text other label will not be visible so we use layouts
+    }
+}
