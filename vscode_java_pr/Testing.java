@@ -350,3 +350,11 @@
 //     }
 // }
 
+
+///////////// if the string contains digit or not  in the codemind problem with the shortcut (".*\\d.*)"///////////
+// if(s.matches(".*\\d.*")){    // here s.matches(".*\\d.*")------> can check the if the  given string conatains the digits or not if it contains digit then it can pritn the yes otherewise print no .
+//                 System.out.println("Yes");
+//             }
+//             else{
+//                 System.out.println("No");
+//             }
