@@ -1,0 +1,41 @@
+abstract class Animal2{
+    abstract void introduce();
+    String name;
+    int age;
+    Animal2(String name,int age)
+    {
+        this.name=name;
+        this.age=age;
+    }
+}
+class Dog extends Animal2{
+    void introduce()//here in the class when we extend an abstract class it is mandatory that there should be the abstract
+    // method in the class here in this ex the abstract method introduce is used which is an abstract method in abstract class
+    //it is mandatory becoz to create diff animal classes with diff names we need to write diff method names in order 
+    //to overcome the confusion of which method is used for a specific class we need abstact methods
+    {
+        System.out.println("name is "+name+" age is "+age);
+    }
+    Dog(String name,int age)
+    {
+        super(name, age);
+    }
+}
+class Squirrel extends Animal2{
+    void introduce()
+    {
+        System.out.println("name is "+name+" age is "+age);
+    }
+    Squirrel(String name,int age)
+    {
+        super(name, age);
+    }
+}
+public class AbstractMethods {
+    public static void main(String[] args) {
+        Dog d1=new Dog("booster",01);
+        d1.introduce();
+        Squirrel s1=new Squirrel("Skew",02);
+        s1.introduce();
+    }
+}
