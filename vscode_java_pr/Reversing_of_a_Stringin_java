@@ -1,0 +1,17 @@
+/////////////Reversing the string/////////////////
+import java.util.*;
+public class ReversingString{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();  // here the string is immutable which means we cant change or modify the string easily that's why we use StringBuilders and StringBuffers but while Builders is more preferable than the Buffers so we are using the Builders.//
+        StringBuilder reversed = new StringBuilder();  //  taking the another string for changing the modifications on the input string//
+        
+        /// taking loop to reading the input string for the last character of the index
+        for(int i = s.length()-1;i>=0;i--){
+            // so after reversing the string appending the reversed string 
+            reversed.append(s.charAt(i));
+        }
+        System.out.println("Original String: " + s);
+        System.out.println("Reversed String: " + reversed.toString());  // writing the for loop in order to print the outpour so we write the to String which can directly print the ouptut without using the for loop//
+    }
+}
